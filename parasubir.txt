@@ -1,1 +1,4 @@
 git push https://github.com/mongis4/ejerciciosRSCDWES.git main
+
+
+git branch -M main // esto cuando lo configuras por primera vez sino no te deja
