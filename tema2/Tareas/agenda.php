@@ -8,6 +8,7 @@
     <style>
         body {
             background-color: wheat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         button {
@@ -18,9 +19,27 @@
             color: #400D00;
         }
 
+        #btn-enviar {
+            background-color: #2C8A0F;
+            color: white;
+            border: 2px solid #0D4203;
+        }
+
         .contenedor-form {
             display: flex;
             justify-content: center;
+        }
+
+        input {
+            border: 2px solid #FFC814;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #FFF3C2;
+            margin-left: 10px;
+        }
+
+        fieldset {
+            border: 2px solid #b72305;
         }
     </style>
 </head>
@@ -51,7 +70,7 @@
             }
         }
 
-        if (isset($agenda)) {
+        if (isset($agenda) && count($agenda) > 0) {
             echo ' <fieldset style="width:50%; margin:auto">';
             echo       '<legend>Datos Agenda</legend>';
             echo        '<ul>';
@@ -74,7 +93,7 @@
                     <input type="text" name="nombre" required><br><br>
                     <label for="telefono">Teléfono</label>
                     <input type="tel" name="telefono"><br><br>
-                    <button type="submit" value="Añadir contacto" name="enviar">Enviar</button>
+                    <button id="btn-enviar" type="submit" value="Añadir contacto" name="enviar">Enviar</button>
                     <button type="reset" value="Limpiar campos">Limpiar</button>
                     <?php foreach ($agenda as $nombre => $telefono): ?>
                         <input type="hidden" name="agenda_oculta[<?= $nombre ?>]" value="<?= $telefono ?>">
