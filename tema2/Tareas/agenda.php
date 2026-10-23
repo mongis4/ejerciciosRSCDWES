@@ -70,7 +70,7 @@
             }
         }
 
-        if (isset($agenda) && count($agenda) > 0) {
+        if (count($agenda) > 0) {
             echo ' <fieldset style="width:50%; margin:auto">';
             echo       '<legend>Datos Agenda</legend>';
             echo        '<ul>';
