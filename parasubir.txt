@@ -1,4 +1,9 @@
 git push https://github.com/mongis4/ejerciciosRSCDWES.git main
 
 
+Despues de hacer git push -u origin HEAD, asi se establece el directorio donde se va a hacer push
+
+creo que ya funciona solo con git push
+
+
 git branch -M main // esto cuando lo configuras por primera vez sino no te deja
