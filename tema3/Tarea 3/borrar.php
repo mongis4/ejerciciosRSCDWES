@@ -16,7 +16,7 @@ function cerrarConexion()
     $conProyecto = null;
 }
 
-if (isset($_POST['borrar'])) {
+if (!isset($_POST['borrar'])) {
     echo "No hay ningun producto que borrar";
 } else {
     try {
@@ -25,7 +25,7 @@ if (isset($_POST['borrar'])) {
         $stmt = $conProyecto->prepare($consulta_delete);
         $stmt->execute([':id' => $id]);
         if ($stmt->rowCount() > 0) {
-            echo "Producto borrado correctamente";
+            echo "Producto $id borrado correctamente";
         } else {
             echo "nada";
         }
@@ -33,3 +33,9 @@ if (isset($_POST['borrar'])) {
         die("Error al recuperar los productos: " . htmlspecialchars($e->getMessage()));
     }
 }
+
+echo "
+    <form action='listado.php' method='POST' style='display:inline;'>
+    <button type='submit' class='btn btn-danger mr-3'>Volver</button>
+    </form>
+";

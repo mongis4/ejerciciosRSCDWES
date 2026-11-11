@@ -63,13 +63,10 @@ function cerrarConexion()
         while ($filas = $resultado1->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr><td>{$filas['id']}</td><td class='text-
 center'>{$filas['nombre']}</td><td>
-        <a href='borrar.php'>
-                <input type='button'
-                    class='btn btn-danger mr-3'
-                    value='Borrar'
-                    name='borrar'>
-            </a>
-            <input type='hidden' name='borrar' id='{$filas['id']}'>
+        <form action='borrar.php' method='POST' style='display:inline;'>
+            <button type='submit' class='btn btn-danger mr-3'>Borrar</button>
+            <input type='hidden' name='borrar' value='{$filas['id']}'>
+        </form>
             </td>
         </tr>";
         }
