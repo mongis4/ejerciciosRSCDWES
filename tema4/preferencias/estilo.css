@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(211, 211, 211);
+}
+form {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 20%;
+margin: 5% 30%;
+background-color: white;
+}
+select{
+     width: 100%;
+     padding: 10px;
+      margin-bottom: 10px;
+}

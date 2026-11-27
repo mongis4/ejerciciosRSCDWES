@@ -2,22 +2,16 @@
     session_start();
 
     $mensaje = "";
-    if (isset($_POST['submit'])) {
-    if (!empty($_POST['nombre']) && !empty($_POST['contrasena'])) {
-        $nombre = $_POST['nombre'];
-        $contrasena = $_POST['contrasena'];
+    if(isset($_POST['submit'])){
+        if(isset($_POST['nombre']) && isset($_POST['contrasena'])){
+            $nombre = $_POST['nombre'];
+            $contrasena = $_POST['contrasena'];
 
-        // Comprobar si ya existe la sesión y coincide con el usuario introducido
-        if (isset($_SESSION['nombre']) && $_SESSION['nombre'] === $nombre) {
-            $mensaje = '<div class="alert alert-success">La sesión ya existía y coincide con el usuario.</div>';
-        } else {
-            // Si no existía o era otro usuario, guardamos la nueva sesión
-            $_SESSION['nombre'] = $nombre;
+            $_SESSION['nombre']= $nombre;
             $_SESSION['contrasena'] = $contrasena;
-            $mensaje = '<div class="alert alert-info">Nueva sesión iniciada para ' . htmlspecialchars($nombre) . '.</div>';
+            $mensaje = 'Bienvenido ' . $nombre;
         }
     }
-}
 
 ?>
 
